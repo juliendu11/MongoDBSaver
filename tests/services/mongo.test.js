@@ -11,6 +11,7 @@ describe('Unit test for Mongo service', () => {
     let connection;
     let db;
 
+    let mongoServer;
     let mongoPort;
     let mongoDbName;
 
@@ -39,6 +40,7 @@ describe('Unit test for Mongo service', () => {
 
     afterAll(async () => {
         await connection.close();
+        await mongoServer.stop();
         if (fs.existsSync(fakeEntityFolder)){
             fs.rmdirSync(fakeEntityFolder, {recursive:true});
         }
