@@ -25,3 +25,20 @@ OUTPUT_FOLDER='' // where your database will be saved, 1 folder and a .zip file 
 #### Launch
 
 Launch with ***node index.js*** or ***use cron system*** for scheduling this
+
+
+## Requirements
+
+- [mongodump](https://docs.mongodb.com/manual/reference/program/mongodump/) Installed in your device
+
+## Dependencies
+
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [@juliendu11/uptoboxapi](https://www.npmjs.com/package/@juliendu11/uptoboxapi)
+- [zip-a-folder](https://www.npmjs.com/package/zip-a-folder)
+
+## Dev Dependencies
+
+- [jest](https://www.npmjs.com/package/jest)
+- [mongodb](https://www.npmjs.com/package/mongodb)
+- [mockdate](https://www.npmjs.com/package/mockdate)
