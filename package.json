@@ -19,6 +19,7 @@
     "@types/jest": "^26.0.14",
     "jest": "^26.4.2",
     "mockdate": "^3.0.2",
-    "mongodb": "^3.6.2"
+    "mongodb": "^3.6.2",
+    "mongodb-memory-server": "^6.9.0"
   }
 }

@@ -4,11 +4,15 @@ const fs = require('fs')
 const config = require('../../config/mongo')
 const exec = require('child_process').exec;
 
+const { MongoMemoryServer } = require("mongodb-memory-server");
 const { MongoClient } = require('mongodb');
 
 describe('Unit test for Mongo service', () => {
     let connection;
     let db;
+
+    let mongoPort;
+    let mongoDbName;
 
     const fakeEntityFolder = "./test_entity2"
 
@@ -16,7 +20,13 @@ describe('Unit test for Mongo service', () => {
         if (!fs.existsSync(fakeEntityFolder)){
             fs.mkdirSync(fakeEntityFolder);
         }
-        connection = await MongoClient.connect(`mongodb://localhost:27017/`, {
+        mongoServer = new MongoMemoryServer();
+        const URI = await mongoServer.getUri();
+        mongoPort = await mongoServer.getPort();
+        //const dbPath = await mongoServer.getDbPath();
+        mongoDbName = await mongoServer.getDbName();
+        
+        connection = await MongoClient.connect(URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
@@ -38,7 +48,7 @@ describe('Unit test for Mongo service', () => {
         config.HOST = "localhost";
         config.PASSWORD = "";
         config.ID = "";
-        config.PORT = 27017;
+        config.PORT = mongoPort;
 
         const users = db.collection('users');
         const mockUser = {_id: 'some-user-id', name: 'John'};
@@ -49,7 +59,7 @@ describe('Unit test for Mongo service', () => {
 
         const output = fakeEntityFolder + "/" + nameGeneratorServiceInstance.getName();
 
-        await mongoServiceInstance.saveDatabase('test', output);
+        await mongoServiceInstance.saveDatabase(mongoDbName, output);
 
         expect(fs.existsSync(output)).toBe(true);
     })

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/juliendu11/MongoDBSaver.svg?branch=main)](https://travis-ci.org/juliendu11/MongoDBSaver)
+
 # MongoDBSaver
 Allows to save a mongoDB database and upload it to Uptobox in zip format
 
@@ -41,4 +43,5 @@ Launch with ***node index.js*** or ***use cron system*** for scheduling this
 
 - [jest](https://www.npmjs.com/package/jest)
 - [mongodb](https://www.npmjs.com/package/mongodb)
+- [mongodb-memory-server](https://www.npmjs.com/package/mongodb-memory-server)
 - [mockdate](https://www.npmjs.com/package/mockdate)
