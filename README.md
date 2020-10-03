@@ -5,7 +5,7 @@ Allows to save a mongoDB database and upload it to Uptobox in zip format
 
 ## Install
 
-Just git clone or download project
+Just git clone or download project and use ***npm install in MongoDBSaver folder***
 
 
 ## How to use ?
@@ -32,6 +32,11 @@ Launch with ***node index.js*** or ***use cron system*** for scheduling this
 ## Requirements
 
 - [mongodump](https://docs.mongodb.com/manual/reference/program/mongodump/) Installed in your device
+
+## TODO
+
+- [ ] Add logs system
+- [ ] Add support more file hosting (mega, dropbox, zippyshare) 
 
 ## Dependencies
 
