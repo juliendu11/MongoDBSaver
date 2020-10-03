@@ -1,0 +1,1 @@
+module.exports = process.env.UPTOBOX_TOKEN;
