@@ -31,7 +31,7 @@ const uploadServiceInstance = new UploadService(uptoboxAPI, uptoboxToken);
         const savedDatabaseFolder = process.env.OUTPUT_FOLDER + name;
         const savedDatabaseFolderArchived = savedDatabaseFolder + ".zip";
 
-        await mongoServiceInstance.saveDatabase('d2grambot', savedDatabaseFolder);
+        await mongoServiceInstance.saveDatabase(process.env.DATABASE_TO_SAVE, savedDatabaseFolder);
         await compressorServiceInstance.compress(savedDatabaseFolder, savedDatabaseFolderArchived);
         const upload = await uploadServiceInstance.uploadFile(savedDatabaseFolderArchived);
         console.log(upload);

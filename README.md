@@ -22,6 +22,8 @@ DATABASE_PASSWORD='' //if required
 OUTPUT_FOLDER='' // where your database will be saved, 1 folder and a .zip file will be created 
                  // in this output but they will be deleted once the .zip file has been uploaded
                  // example: '/home/julien/Desktop/'
+                 
+DATABASE_TO_SAVE='' // name of database to save
 ````
 
 #### Launch
