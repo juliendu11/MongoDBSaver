@@ -24,6 +24,7 @@ OUTPUT_FOLDER='' // where your database will be saved, 1 folder and a .zip file 
                  // example: '/home/julien/Desktop/'
                  
 DATABASE_TO_SAVE='' // name of database to save
+DATABASE_ADMIN_AUTH='false' //or true if required if you have configure auth for access database
 ````
 
 #### Launch
